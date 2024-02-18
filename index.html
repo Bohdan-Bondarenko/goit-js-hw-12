@@ -4,22 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/goit-js-hw-12/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search IMG</title>
+    <title>Vanilla App Template</title>
     
     <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-64b55ca9.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5401a4b0.js">
     <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-cf6910df.css">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-d92dda81.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-311e72fa.css">
   </head>
   <body>
     <form class="search-form">
-      <input type="text" name="text" placeholder="Search images..." />
-      <button type="submit">Search</button>
+      <input type="text" class="search-input" name="query" placeholder="Search images..." />
+      <button type="submit" class="search-btn">Search</button>
     </form>
-    <span class="loader" style="display: none"></span>
+    <span class="loader hidden"></span>
+      
     <ul class="gallery"></ul>
-    <button type="button" class="loadBtn">Load more</button>
-    <span class="loader moreLoader" style="display: none"></span>
+    
+    <button class="load-more">Load more</button>
 
     
   </body>
