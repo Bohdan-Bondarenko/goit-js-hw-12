@@ -1,31 +1,19 @@
 import axios from 'axios';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 
-import { perPage } from '../main.js';
+axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-export async function fetchImages(currentQuery, page) {
-  axios.defaults.baseURL = `https://pixabay.com`;
-  const response = await axios.get('/api/', {
-    params: {
-      key: '42411294-725222da594329eba51636ded',
-      q: currentQuery,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: page,
-      per_page: perPage,
-    },
-  });
-  if (response.status !== 200) {
-    throw new Error('Failed to fetch images');
-  } else if (response.data.hits.length === 0) {
-    iziToast.error({
-      message:
-        'Sorry, there are no images matching your search query. Please try again!',
-      messageSize: 10.5,
-      position: 'topRight',
+export async function getGallery(queryName, page = 1, perPage = 15) {
+
+    const response = await axios.get('', {
+        params: {
+            key: '42112521-3ff4dfc201bab0977369cd2bc',
+            q: queryName,
+            image_type: 'photo',
+            orientation: 'horizontal',
+            safesearch: 'true',
+            page,
+            per_page: perPage
+        }
     });
-  }
-  return response.data;
+    return response.data;
 }
